@@ -14,7 +14,7 @@ This tool solves that by maintaining a `disabled_skills/` directory. Unused skil
 
 ## 🛠️ Installation & Setup
 
-You can clone this repository to any location (such as `~/Proyects/aby` or directly into the skills folder). To activate it:
+You can clone this repository to any location (such as `~/Projects/aby` or directly into the skills folder). To activate it:
 
 1. **Create the skill-manager directory**:
    ```bash
