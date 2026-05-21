@@ -7,27 +7,27 @@ description: Manage and dynamically load/unload Antigravity skills to save conte
 
 This is the central skill management tool. It allows you to enable and disable skills on-the-fly to keep the system context lightweight and save tokens.
 
-**Script Path**: `~/Proyects/aby/manage_skills.py`
+**Script Location**: Inside the same directory as this `SKILL.md` file (resolve the absolute path dynamically by replacing `SKILL.md` with `manage_skills.py` in the skill's path shown in your system prompt metadata).
 
 ## Available Commands
 
-When you realize you need a specific skill, you must use the `run_command` tool to execute the python script:
+When you realize you need a specific skill, you must use the `run_command` tool to execute the `manage_skills.py` script located in this skill's directory:
 
 1. **List all available skills (Active and Disabled):**
    ```bash
-   ~/Proyects/aby/manage_skills.py list
+   python3 <path_to_skill_dir>/manage_skills.py list
    ```
 
 2. **Enable specific skills:**
    ```bash
-   ~/Proyects/aby/manage_skills.py enable <skill_name1> <skill_name2>
+   python3 <path_to_skill_dir>/manage_skills.py enable <skill_name1> <skill_name2>
    ```
-   *Example:* `~/Proyects/aby/manage_skills.py enable my-special-skill`
+   *Example:* `python3 <path_to_skill_dir>/manage_skills.py enable my-special-skill`
    *Note: Check if the skill you need is active. If not, enable it using this command, and then read its `SKILL.md` via `view_file` to learn how to use it.*
 
 3. **Disable specific skills:**
    ```bash
-   ~/Proyects/aby/manage_skills.py disable <skill_name>
+   python3 <path_to_skill_dir>/manage_skills.py disable <skill_name>
    ```
    *Note: You should disable skills when you are completely done with a task to save tokens.*
 

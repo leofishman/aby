@@ -14,54 +14,44 @@ This tool solves that by maintaining a `disabled_skills/` directory. Unused skil
 
 ## 🛠️ Installation & Setup
 
-1. **Clone this repository** into your Projects folder:
-   ```bash
-   git clone git@github.com:leofishman/aby.git ~/Proyects/aby
-   ```
+You can clone this repository to any location (such as `~/Proyects/aby` or directly into the skills folder). To activate it:
 
-2. **Make the script executable**:
-   ```bash
-   chmod +x ~/Proyects/aby/manage_skills.py
-   ```
-
-3. **Install the Skill Manager as the only active skill** in your Antigravity config:
+1. **Create the skill-manager directory**:
    ```bash
    mkdir -p ~/.gemini/config/skills/skill-manager
-   cp ~/Proyects/aby/SKILL.md ~/.gemini/config/skills/skill-manager/SKILL.md
    ```
 
-Now, the AI assistant will always have the `skill-manager` capability loaded and will know how to load/unload other skills on-the-fly when requested.
+2. **Copy or Symlink both files** (`SKILL.md` and `manage_skills.py`) into the active skills directory:
+   ```bash
+   cp SKILL.md manage_skills.py ~/.gemini/config/skills/skill-manager/
+   ```
+
+3. **Make the script executable**:
+   ```bash
+   chmod +x ~/.gemini/config/skills/skill-manager/manage_skills.py
+   ```
+
+Once installed, the AI assistant will always have the `skill-manager` capability loaded and will know how to run the script inside its own directory dynamically.
 
 ---
 
 ## 🚀 CLI Usage
 
-You can run the script manually from your terminal to manage your active skills.
+You can run the script manually from your terminal inside the skill folder, or let the assistant invoke it on your behalf.
 
 ### 1. List Available Skills
-Lists all Active and Disabled skills:
 ```bash
-~/Proyects/aby/manage_skills.py list
+./manage_skills.py list
 ```
 
 ### 2. Enable Skills
-Enables specific skills by name.
 ```bash
-# Enable specific skills
-~/Proyects/aby/manage_skills.py enable <skill_name>
-
-# Enable all disabled skills at once
-~/Proyects/aby/manage_skills.py enable --all
+./manage_skills.py enable <skill_name>
 ```
 
 ### 3. Disable Skills (Save Tokens!)
-Safely deactivates skills by moving them to the `disabled_skills` directory.
 ```bash
-# Disable specific active skills
-~/Proyects/aby/manage_skills.py disable <skill_name>
-
-# Disable all active skills (Safe Mode)
-~/Proyects/aby/manage_skills.py disable --all
+./manage_skills.py disable <skill_name>
 ```
 
 ---
